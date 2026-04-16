@@ -8,12 +8,12 @@ return require('packer').startup(function(use)
 	  requires = { {'nvim-lua/plenary.nvim'} }
   }
 
-  use({ 
-	  'rebelot/kanagawa.nvim', 
-	  as = 'kanagawa', 
-	  config = function() 
-		  vim.cmd("colorscheme kanagawa") 
-	  end 
+  use({
+	  'rebelot/kanagawa.nvim',
+	  as = 'kanagawa',
+	  config = function()
+		  vim.cmd("colorscheme kanagawa")
+	  end
   })
 
   use({'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'})
@@ -30,4 +30,13 @@ return require('packer').startup(function(use)
   use('hrsh7th/cmp-cmdline')
   use('L3MON4D3/LuaSnip')
   use('saadparwaiz1/cmp_luasnip')
+
+  use {
+      "windwp/nvim-autopairs",
+      event = "InsertEnter",
+      config = function()
+          require("nvim-autopairs").setup {}
+      end
+  }
+
 end)

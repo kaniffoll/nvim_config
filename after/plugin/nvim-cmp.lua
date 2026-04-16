@@ -13,7 +13,7 @@ cmp.setup({
    ["<C-k>"] = cmp.mapping.select_prev_item(),
    ["<C-l>"] = cmp.mapping.complete(),
    ['<C-e>'] = cmp.mapping.abort(),
-   ['<CR>'] = cmp.mapping.confirm({ select = true }),
+   ['<Tab>'] = cmp.mapping.confirm({ select = true }),
    }),
 
   sources = cmp.config.sources({
