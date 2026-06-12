@@ -14,5 +14,9 @@ vim.keymap.set("n", "J", "mzJ`z")
 vim.keymap.set("n", "<leader>y", "\"+y")
 vim.keymap.set("v", "<leader>y", "\"+y")
 
+-- move rows left in right in visual mode
+vim.keymap.set("v", ">", ">gv")
+vim.keymap.set("v", "<", "<gv")
+
 -- disabling Q
 vim.keymap.set("n", "Q", "<nop>")
