@@ -42,3 +42,6 @@ vim.opt.isfname:append("@-@")
 
 -- highlight the 80-character column as a coding guideline
 vim.opt.colorcolumn = "80"
+
+-- enable local .exrc files
+vim.opt.exrc = true
