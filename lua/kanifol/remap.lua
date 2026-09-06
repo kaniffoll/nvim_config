@@ -20,3 +20,14 @@ vim.keymap.set("v", "<", "<gv")
 
 -- disabling Q
 vim.keymap.set("n", "Q", "<nop>")
+
+-- move cursor by pages with center focus
+vim.keymap.set("n", "<C-d>", "<C-d>zz")
+vim.keymap.set("n", "<C-u>", "<C-u>zz")
+
+-- set cursor in center in search
+vim.keymap.set("n", "n", "nzz")
+vim.keymap.set("n", "N", "Nzz")
+
+-- no change buffer when paste
+vim.keymap.set("v", "<leader>p", "\"_dP")
