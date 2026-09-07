@@ -28,6 +28,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		opts.desc = "Smart rename"
 		keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts) -- smart rename
 
+		opts.desc = "Show diagnostics for file"
 		keymap.set("n", "<leader>D", "<cmd>Telescope diagnostics bufnr=0<CR>", opts) -- show  diagnostics for file
 
 		opts.desc = "Show line diagnostics"
@@ -45,6 +46,16 @@ vim.api.nvim_create_autocmd("LspAttach", {
 
 		opts.desc = "Show documentation for what is under cursor"
 		keymap.set("n", "K", vim.lsp.buf.hover, opts) -- show documentation for what is under cursor
+
+		opts.desc = "Organize imports"
+		keymap.set("n", "<leader>i", function() -- organize imports
+			vim.lsp.buf.code_action({
+				context = { only = { "source.organizeImports" } },
+				apply = true,
+			})
+		end, opts)
+
+		vim.lsp.inlay_hint.enable(true, { bufnr = ev.buf })
 
 		opts.desc = "Restart LSP"
 		keymap.set("n", "<leader>rs", ":LspRestart<CR>", opts) -- mapping to restart lsp if necessary
