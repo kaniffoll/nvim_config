@@ -6,8 +6,10 @@ return {
 			"html",
 			"pylsp",
 			"jdtls",
-			"kotlin_language_server",
 			"clangd",
+		},
+		automatic_enable = {
+			exclude = { "kotlin_lsp" },
 		},
 	},
 	dependencies = {
