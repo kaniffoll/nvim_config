@@ -1,3 +1,9 @@
+vim.lsp.config("kotlin_language_server", {
+	init_options = {
+		storagePath = vim.fn.stdpath("cache") .. "/kotlin-lsp",
+	},
+})
+
 local keymap = vim.keymap -- for conciseness
 vim.api.nvim_create_autocmd("LspAttach", {
 	group = vim.api.nvim_create_augroup("UserLspConfig", {}),
