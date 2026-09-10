@@ -31,3 +31,7 @@ vim.keymap.set("n", "N", "Nzz")
 
 -- no change buffer when paste
 vim.keymap.set("v", "<leader>p", "\"_dP")
+
+-- tab for multiple rows
+vim.keymap.set("v", "<Tab>", ">gv")
+vim.keymap.set("v", "<S-Tab>", "<gv")
