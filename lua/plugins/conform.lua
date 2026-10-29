@@ -19,7 +19,9 @@ return {
 			java = { "google-java-format" },
 		},
 	},
-	config = function()
+	config = function(_, opts)
+		require("conform").setup(opts)
+
 		vim.keymap.set("n", "<leader>f", function()
 			require("conform").format({
 				async = true,
