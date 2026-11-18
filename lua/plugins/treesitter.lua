@@ -11,6 +11,7 @@ return {
             "javascript",
             "cpp",
             "c",
+            "sql",
         }
         local alreadyInstalled = require('nvim-treesitter.config').get_installed()
         local parsersToInstall = vim.iter(ensureInstalled)
