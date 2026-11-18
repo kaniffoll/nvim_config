@@ -50,3 +50,13 @@ vim.opt.exrc = true
 vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 vim.opt.foldlevelstart = 99
+
+-- auto creation of dirs
+vim.api.nvim_create_autocmd("BufWritePre", {
+	callback = function()
+		local dir = vim.fn.expand("<afile>:p:h")
+		if vim.fn.isdirectory(dir) == 0 then
+			vim.fn.mkdir(dir, "p")
+		end
+	end,
+})

@@ -17,6 +17,8 @@ return {
 			cpp = { "clang_format" },
 
 			java = { "google-java-format" },
+
+			sql = { "sleek" },
 		},
 	},
 	config = function(_, opts)
